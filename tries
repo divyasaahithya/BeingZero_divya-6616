@@ -1,0 +1,43 @@
+1. Introduction to TRIE Advanced Data Structure  
+A TRIE (prefix tree) is used for efficient string storage and retrieval. 
+A TRIE (pronounced as "try") is a tree-based data structure used for efficient storage, retrieval, and searching of strings, particularly in dictionary and autocomplete applications
+It is also known as a prefix tree because it stores words by breaking them into individual characters along a path, ensuring that common prefixes are shared among multiple words.
+
+Key Features of TRIE:  
+1. Efficient Storage – Words sharing common prefixes use the same initial paths, reducing redundant storage.  
+2. Fast Lookup – Searching for a word takes O(M) time, where M is the length of the word.  
+3. Autocomplete Support – TRIE efficiently suggests words based on a given prefix.  
+4. Prefix Searching – Allows searching for all words with a given prefix in optimal time.  
+5. Dictionary Implementation – Useful in spell checkers, IP routing, and natural language processing.  
+
+Structure of a TRIE Node:  
+Each node in a TRIE contains:  
+- A fixed array (or HashMap) of child nodes, typically of size 26 for lowercase English letters.  
+- A flag to mark the end of a valid word.  
+
+
+2. Important Operations on TRIE  
+- Insert(word) → Adds a word to the trie.  
+- Search(word) → Checks if a word exists in the trie.  
+- StartsWith(prefix) → Returns words starting with a given prefix.  
+
+
+3. Complexity Analysis for Storing Large Amounts of Words  
+| Data Structure | Insert/Search Complexity |
+|----------------|--------------------------|
+| Array          | O(n)                     |
+| Linked List    | O(n)                     |
+| BST            | O(log n)                 |
+| TRIE           | O(m) (m = word length)   |
+
+
+4. How to Use TRIE as a Map?  
+- Store key-value pairs where keys are strings.  
+- Use trie nodes to store values at end nodes.  
+
+
+5. Real-World Applications of TRIE  
+- Auto-suggest in search engines  
+- Spell checkers  
+- IP routing tables  
+- Dictionary implementations  

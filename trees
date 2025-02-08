@@ -1,0 +1,62 @@
+Binary Search Trees (BST) and Self-Balancing Trees
+
+1. BST and Its Time Complexity for Important Operations  
+ Binary Search Tree (BST) is a tree where:  
+- The left subtree contains nodes with values less than the root.  
+- The right subtree contains nodes with values greater than the root.  
+
+Time Complexity of BST Operations  
+
+| Operation   | Best Case (Balanced) | Worst Case (Skewed) |
+|-------------|----------------------|---------------------|
+| Search      | O(log n)             | O(n)                |
+| Insert      | O(log n)             | O(n)                |
+| Delete      | O(log n)             | O(n)                |
+
+ 
+2. Need for Self-Balancing Trees  
+A standard BST can become unbalanced, resulting in O(n) time complexity. Self-balancing trees, like AVL and Red-Black Trees, ensure a height of O(log n), improving efficiency.
+
+
+3. AVL Trees: Introduction and Detection of Imbalance  
+An AVL Tree is a self-balancing BST where:  
+- Each node has a Balance Factor (BF) = height(left) - height(right).  
+- If BF is not in the range [-1, 1], the tree is unbalanced.  
+
+
+4. Sub-Cases of Imbalance in AVL Trees  
+| Case            | Condition                           | Rotation Required              |
+|-----------------|-------------------------------------|--------------------------------|
+| LL (Left-Left)  | Left-heavy subtree                  | Right Rotation                 |
+| LR (Left-Right) | Left subtree has right-heavy child  | Left Rotation → Right Rotation |
+| RL (Right-Left) | Right subtree has left-heavy child  | Right Rotation → Left Rotation |
+| RR (Right-Right)| Right-heavy subtree                 | Left Rotation                  |
+
+ 
+5. How to Balance Each Case  
+- LL Case: Right Rotation  
+- RR Case: Left Rotation  
+- LR Case: Left Rotation on left child → Right Rotation on parent  
+- RL Case: Right Rotation on right child → Left Rotation on parent  
+
+
+6. AVL Trees vs. Red-Black Trees  
+| Feature       | AVL Tree          | Red-Black Tree                |
+|---------------|-------------------|-------------------------------|
+| Balance       | Strictly balanced | Loosely balanced              |
+| Search        | O(log n)          | O(log n)                      |
+| Insert/Delete | More rotations    | Fewer rotations               |
+| Use Case      | Fast lookups      | Frequent insertions/deletions |
+
+AVL Trees: Use when search operations are more frequent than insertions and deletions. 
+Red-Black Trees: Use when insertions and deletions are more frequent than searches. 
+ 
+7. UML Diagram for AVL Tree Web UI  
+
++----------------+           +----------------+
+|   Web UI      |           |   AVL Tree     |
++----------------+           +----------------+
+| +displayTree() |  ----->   | +insert(value) |
+| +insertNode()  |           | +delete(value) |
+| +deleteNode()  |           | +balanceTree() |
++----------------+           +----------------+

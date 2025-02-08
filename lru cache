@@ -1,0 +1,60 @@
+Caching Concepts and LRU Cache Implementation  
+
+1. What is Caching? Need?  
+Caching is storing frequently accessed data in memory to speed up retrieval.  
+Why Needed?  
+- Reduces database load  
+- Improves performance  
+- Enhances scalability  
+
+
+2. In-Memory Cache: Redis and MemCache Introduction  
+- Redis: Supports persistence, pub/sub, and advanced data structures.  
+- Memcached: A simple, faster key-value store without persistence.  
+
+
+3. Cache Memory in Computer Organization  
+Cache Memory is high-speed storage between RAM and CPU.  
+- L1 Cache: Smallest, fastest, closest to CPU.  
+- L2 Cache: Larger, shared among cores.  
+- L3 Cache: Slowest but still faster than RAM.  
+
+
+4. Different Cache Replacement Strategies  
+| Strategy                    | Description                            |
+|-----------------------------|--------------------------------------- |
+| LRU (Least Recently Used)   | Removes least recently used item       |
+| FIFO (First In First Out)   | Removes oldest cached item             |
+| LFU (Least Frequently Used) | Removes least frequently accessed item |
+| Random Replacement          | Removes a random cached item           |
+
+
+5. Designing LRU Cache Using Doubly Linked List and HashMap  
+- HashMap stores key-node mappings.  
+- Doubly Linked List keeps track of usage order.  
+//Lru.java
+
+
+6. UML Diagram for LRU Cache  
+plaintext
++------------------+
+| LRUCache         |
++------------------+
+| - capacity       |
+| - hashmap        |
+| - head, tail     |
++------------------+
+| +get(key)        |
+| +put(key, value) |
++------------------+
+       |
+       v
++------------------+
+| DoublyLinkedList |
++------------------+
+| - key, value     |
+| - prev, next     |
++------------------+
+
+
+

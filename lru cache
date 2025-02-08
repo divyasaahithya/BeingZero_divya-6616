@@ -32,7 +32,7 @@ Cache Memory is high-speed storage between RAM and CPU.
 5. Designing LRU Cache Using Doubly Linked List and HashMap  
 - HashMap stores key-node mappings.  
 - Doubly Linked List keeps track of usage order.  
-//Lru.java
+//Lru.java 
 
 
 6. UML Diagram for LRU Cache  
@@ -57,4 +57,4 @@ plaintext
 +------------------+
 
 
-
+7.//leetLRU.java contains lru implementation in java
